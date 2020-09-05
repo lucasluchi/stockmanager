@@ -75,10 +75,13 @@
             // 
             this.OperationCV.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.OperationCV.Location = new System.Drawing.Point(178, 40);
+            this.OperationCV.MaxLength = 1;
             this.OperationCV.Name = "OperationCV";
             this.OperationCV.Size = new System.Drawing.Size(40, 20);
             this.OperationCV.TabIndex = 2;
             this.OperationCV.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.OperationCV.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.OperationCV_KeyPress);
+            this.OperationCV.Leave += new System.EventHandler(this.VerifyOperation);
             // 
             // OperationQuantity
             // 
@@ -88,6 +91,8 @@
             this.OperationQuantity.Size = new System.Drawing.Size(60, 20);
             this.OperationQuantity.TabIndex = 3;
             this.OperationQuantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.OperationQuantity.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AllowOnlyNumber);
+            this.OperationQuantity.Leave += new System.EventHandler(this.VerifyOperation);
             // 
             // OperationTax
             // 
@@ -130,6 +135,8 @@
             this.OperationFees.Size = new System.Drawing.Size(80, 20);
             this.OperationFees.TabIndex = 8;
             this.OperationFees.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.OperationFees.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AllowOnlyReais);
+            this.OperationFees.Leave += new System.EventHandler(this.VerifyOperation);
             // 
             // OperationPrice
             // 
@@ -139,6 +146,8 @@
             this.OperationPrice.Size = new System.Drawing.Size(80, 20);
             this.OperationPrice.TabIndex = 7;
             this.OperationPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.OperationPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AllowOnlyReais);
+            this.OperationPrice.Leave += new System.EventHandler(this.VerifyOperation);
             // 
             // OperationBroker
             // 
@@ -148,6 +157,7 @@
             this.OperationBroker.Size = new System.Drawing.Size(80, 20);
             this.OperationBroker.TabIndex = 9;
             this.OperationBroker.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.OperationBroker.Leave += new System.EventHandler(this.VerifyOperation);
             // 
             // label1
             // 

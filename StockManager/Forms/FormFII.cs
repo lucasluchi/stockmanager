@@ -31,8 +31,6 @@ namespace StockManager.Forms
         {
             using (FormAddOperation formAddOperation = new FormAddOperation())
             {
-                this.Hide();
-
                 formAddOperation.Owner = this;
                 formAddOperation.StartPosition = FormStartPosition.CenterParent;
                 formAddOperation.ShowDialog();
